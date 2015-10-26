@@ -1,0 +1,13 @@
+<h1>Tags#_form</h1>
+<p>Find me in app/views/tags/_form.html.erb</p>
+
+<%= form_for @tag do |f| %>
+<%= f.text_field :name %>
+<%= f.collection_check_boxes(:post_ids, @posts, :id, :title) do |b| %>
+  <div>
+    <%= b.check_box %>
+    <%= b.label %>
+  </div>
+  <% end %>
+  <%= f.submit %>
+  <% end %>

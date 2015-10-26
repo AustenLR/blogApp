@@ -1,0 +1,10 @@
+<h1>Tags#show</h1>
+<p>Find me in app/views/tags/show.html.erb</p>
+
+
+<%= @tag.name  %>
+<% @tag.posts.each do |p| %>
+  <%= p.title %>
+<% end %>
+<%= link_to 'edit', edit_tag_path(@tag) %>
+<%= link_to 'delete', tag_path(@tag), method: :delete, data: {alert: 'sure?'} %>
